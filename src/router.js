@@ -40,12 +40,10 @@ router.show = function() {
  */
 router.getContent = function( slug ) {
 	const { pages, posts } = data;
-	const matchedPosts = posts.filter( post => post.slug === slug );
-	const matchedPages = pages.filter( page => page.slug === slug );
-	if (matchedPosts[0]) {
-		view.showSingle( matchedPosts[0] );
-	} else if (matchedPages[0]) {
-		view.showSingle( matchedPages[0] );
+	const content = [ ...pages, ...posts ];
+	const matchedContent = content.filter( content => content.slug === slug );
+	if (matchedContent[0]) {
+		view.showSingle( matchedContent[0] );
 	} else {
 		view.show404( slug );
 	}
