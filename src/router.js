@@ -7,7 +7,6 @@ const router = {};
 
 /**
  * Initialize Router
- * @return {[type]} [description]
  */
 router.init = async function() {
 	await data.init( 'https://javascriptforwp.com/wp-json/wp/v2/' );
