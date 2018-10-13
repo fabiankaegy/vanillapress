@@ -5,17 +5,6 @@ import { helper } from './helper';
 const view = {};
 
 /**
- * Initialize View
- * @param  {[type]} data [description]
- * @return {[type]}      [description]
- */
-view.init = function( data ) {
-	const { posts, pages } = data;
-	view.showArchive( posts );
-	view.showNavigation( pages );
-}
-
-/**
  * Wrapper function for clearing the main element
  */
 view.clear = function() {
