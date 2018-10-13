@@ -12,7 +12,7 @@ const router = {};
 router.init = async function() {
 	await data.init( 'https://javascriptforwp.com/wp-json/wp/v2/' );
 	router.listen();
-	view.init( data );
+	router.show();
 };
 
 /**
