@@ -846,9 +846,10 @@ router.init = __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator
 
 				case 2:
 					router.listen();
+					__WEBPACK_IMPORTED_MODULE_3__view__["a" /* view */].init(__WEBPACK_IMPORTED_MODULE_2__data__["a" /* data */]);
 					router.show();
 
-				case 4:
+				case 5:
 				case 'end':
 					return _context.stop();
 			}
@@ -2785,6 +2786,18 @@ module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
 
 
 var view = {};
+
+/**
+ * Initialize View
+ * @param  {[type]} data [description]
+ * @return {[type]}      [description]
+ */
+view.init = function (data) {
+	var posts = data.posts,
+	    pages = data.pages;
+
+	view.showNavigation(pages);
+};
 
 /**
  * Wrapper function for clearing the main element
