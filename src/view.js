@@ -1,6 +1,7 @@
 'use strict';
 
 import { helper } from './helper';
+import { navigation } from './components/navigation';
 
 const view = {};
 
@@ -9,9 +10,8 @@ const view = {};
  * @param  {[type]} data [description]
  * @return {[type]}      [description]
  */
-view.init = function( data ) {
-	const { posts, pages } = data;
-	view.showNavigation( pages );
+view.init = function() {
+	navigation.init();
 }
 
 /**

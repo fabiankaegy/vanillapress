@@ -1,17 +1,17 @@
 'use strict';
 
-import { data } from './data';
 import { view } from './view';
+import { post } from './components/post';
+import { postList } from './components/postList';
 
 const router = {};
 
 /**
  * Initialize Router
  */
-router.init = async function() {
-	await data.init( 'https://javascriptforwp.com/wp-json/wp/v2/' );
+router.init = function() {
 	router.listen();
-	view.init( data );
+	view.init();
 	router.show();
 };
 
@@ -27,7 +27,7 @@ router.show = function() {
 	view.clear();
 	const hash = window.location.hash;
 	if (hash === '') {
-		view.showArchive( data.posts );
+		postList.init();
 	} else {
 		router.getContent( hash.substr(1) );
 	};
@@ -38,14 +38,11 @@ router.show = function() {
  * @param  {String} slug 
  */
 router.getContent = function( slug ) {
-	const { pages, posts } = data;
-	const content = [ ...pages, ...posts ];
-	const matchedContent = content.filter( content => content.slug === slug );
-	if (matchedContent[0]) {
-		view.showSingle( matchedContent[0] );
-	} else {
-		view.show404( slug );
-	}
+	// if () {
+	// 	post.init( matchedContent[0].id, true );
+	// } else {
+	// 	view.show404( slug );
+	// }
 };
 
 export {

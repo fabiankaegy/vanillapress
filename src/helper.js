@@ -86,7 +86,7 @@ helper.createMarkup = ( id, title, slug, content, type, additionalClass = '', is
 	const articleElement = helper.create('article');
 	articleElement.classList.add([type, additionalClass]);
 	articleElement.setAttribute( 'id', id );
-	const titleMarkup = ( isSingle ? `<h2>${title}</h2>` : `<h2><a href="#${slug}">${title}</a></h2>`);
+	const titleMarkup = ( isSingle ? `<h2>${title}</h2>` : `<h2><a href="#${slug}" data-type="${type}">${title}</a></h2>`);
 	const markup = `
 		<header class="entry-header">
 			${titleMarkup}
